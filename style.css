@@ -1,0 +1,134 @@
+/*=============Цвета===================*/
+:root {
+    --bg-dark: hsl(220, 35%, 8%);       /* фон сайта */
+    --card-bg: hsl(225, 30%, 14%);      /* фон карточки */
+    --card-border: hsl(230, 35%, 22%);  /* граница и тень */
+    --accent: hsl(13, 90%, 65%);        /* текст на кнопках */
+    --hover: hsl(17, 100%, 74%);        /* hover кнопок */
+    --white: hsl(27, 100%, 96%);        /* основной текст */
+    --button-bg: hsl(225, 30%, 20%);    /* фон кнопок и примечания */
+    --note-color: hsl(220, 20%, 45%);   /* цвет заметки */
+}
+
+/*=============Шрифты==================*/
+@font-face {
+    font-family: "Outfit";
+    src: url(assets/fonts/outfit/Outfit-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Outfit";
+    src: url(assets/fonts/outfit/Outfit-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Outfit";
+    src: url(assets/fonts/outfit/Outfit-Bold.ttf);
+    font-weight: 700;
+}
+
+/*=============Общее===================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*===============Фон===================*/
+body{
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Outfit", sans-serif;
+    color: var(--white);
+    font-size: 16px;
+    padding: 10% 0;
+}
+
+/*================Карточка=============*/
+.card{
+    background-color: var(--card-bg);
+    width: 90%;
+    max-width: 500px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+/*==============Информация о карточке==*/
+.card_avatar{
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.card_name{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.description{
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/*===========Список ссылок=============*/
+.card ul{
+    margin: 30px 0 10px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+
+}
+.card nav {
+    width: 100%;
+}
+.card li a{
+    background-color: var(--button-bg);
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--accent);
+    width: 100%;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.card li a:hover{
+    background-color: var(--hover);
+    color: var(--white);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/*==============Предупреждение=========*/
+.card_note{
+    color: var(--note-color);
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/*==============ПК-версия==============*/
+
+
+@media screen and (min-width: 768px) {
+    body {
+        padding: 5% 0;
+    }
+    .card {
+        padding: 30px 40px;
+    }
+}
